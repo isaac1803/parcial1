@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" />
+
+    <title>Formulario Registro</title>
+</head>
+
+<body>
+
+
+    <div class="a">
+        <h1><b>Web</b>Developer</h1>
+
+    </div>
+
+
+
+    <form id="transactionsForm" class="form-register">
+        <h4>Formulario de afiliación</h4>
+        <div class="form-group has-feedback">
+            <i class="fa fa-user form-control-feedback"></i>
+            <input class="form-control " type="text" name="nombres" id="nombres" placeholder="Nombre">
+            <i class="fa fa-envelope form-control-feedback" aria-hidden="true"></i>
+            <input class="form-control" type="email" name="correo" id="correo" placeholder="Correo">
+            <i class="fa fa-phone form-control-feedback" aria-hidden="true"></i>
+            <input class="form-control" type="number" name="telefono" id="telefono" placeholder="numero de celular">
+            <i class="fa fa-heart form-control-feedback"></i>
+            <input class="form-control" type="text" name="gustos" id="gustos" placeholder="Ingrese gusto">
+            <button type="submit" class="btn btn-outline-success">Gusto</button>   
+        </div>
+
+
+
+
+        <table id="tabla1">
+            <tr>
+                <td><i class="fa fa-flag fa-4x " aria-hidden="true"></i>
+                </td>
+                <td id="nested">
+                    <table id="tabla2">
+                        <tr>
+                            <td>Gusto</td>
+                            <td>%</td>
+                            <td>Edit</td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+        </table>
+        </div>
+
+
+        <p>Estoy de acuerdo con
+            <a href="https://www.youtube.com/auron">Terminos y Condiciones</a>
+        </p>
+
+    </form>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        const form = document.getElementById("transactionsForm");
+        console.log(form);
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            let transactionsFormData = new FormData(form);
+            let transTable = document.getElementById("tabla2");
+            let newRow = transTable.insertRow(-1);
+            let newCell = newRow.insertCell(0);
+            newCell.textContent = transactionsFormData.get("gustos");
+            newCell = newRow.insertCell(1);
+            newCell.textContent = 0;
+            newCell = newRow.insertCell(2);
+            newCell.textContent = "Editar";
+
+        });
+    </script>
+    <form id="transactionsForm" class="form-register">
+        <div >
+             <button type="submit" class="btn btn-outline-success">aceptar</button>
+             <button type="submit" class="btn btn-outline-success">Cancelar</button>
+        </div>
+    </form>    
+</body>
+
+</html>
